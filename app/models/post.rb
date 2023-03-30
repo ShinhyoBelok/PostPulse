@@ -16,4 +16,8 @@ class Post < ApplicationRecord
     self.likes_counter = likes.count
     save
   end
+
+  def update_post_counter
+    author.increment!(:posts_counter)
+  end
 end
