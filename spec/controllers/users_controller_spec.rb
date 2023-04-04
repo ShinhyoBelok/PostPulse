@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :request do
   describe 'GET #index' do
     it 'returns a successful response' do
       get '/users'
-      expect(response).to have_http_status(200)
+      expect(response).to be_successful
     end
 
     it 'displays the correct template' do
@@ -21,7 +21,7 @@ RSpec.describe UsersController, type: :request do
   describe 'GET #show' do
     it 'returns a successful response' do
       get '/users/:id'
-      expect(response).to have_http_status(200)
+      expect(response).to be_successful
     end
 
     it 'displays the correct template' do
