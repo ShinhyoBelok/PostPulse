@@ -5,8 +5,10 @@
         <h2>Bio</h2>
         <p><%= @user.bio %></p>
     </article>
-    <% @user.posts.each do |post| %>
-    <%= render "posts/post_card", post: post %>
+    <% @user.most_recent_posts.each do |post| %>
+    <%= render "posts/post_card", post: post, user: @user %>
     <%end%>
-    <button class="see_all">See all posts</button>
+    <button class="see_all">
+        <%= link_to 'See all Post', "/users/#{@user.id}/posts", html_options: { as: "script" } %>
+    </button>
 </section>
