@@ -1,1 +1,12 @@
-<h1>Show user information with the requested id <%= params[:id] %><h1> 
+<%= stylesheet_link_tag('users_show') %>
+<section class="user_detail">
+    <%= render "user_card", user: @user %>
+    <article class="bio border">
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+    </article>
+    <% @user.posts.each do |post| %>
+    <%= render "posts/post_card", post: post %>
+    <%end%>
+    <button class="see_all">See all posts</button>
+</section>

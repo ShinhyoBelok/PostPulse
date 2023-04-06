@@ -1,1 +1,6 @@
-<h1> List of user name and the number of posts <h1>
+<%= stylesheet_link_tag('user_card') %>
+<section>
+    <% @users.each do |user| %>
+    <%= render "user_card", user: user %>
+    <%end%>
+</section>
