@@ -1,0 +1,27 @@
+.user_detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.see_all {
+  width: fit-content;
+  align-self: center;
+}
+
+.border {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+  background-color: rgb(172, 219, 238);
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.counter {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
