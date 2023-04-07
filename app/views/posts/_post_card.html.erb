@@ -1,0 +1,10 @@
+<%= link_to "/users/#{@user.id}/posts/#{post.id}", html_options: { as: "script" } do %>
+<article class="post border">
+    <h3 class="title"><%= post.title %></h3>
+    <p><%= post.text %></p>
+    <div class="counter">
+        <h5>Comments: <%= post.comments_counter %></h5>
+        <h5>Likes: <%= post.likes_counter %></h5>
+    </div>
+</article>
+<% end %>

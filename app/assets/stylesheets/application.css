@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+
+* {
+  font-family: 'Saira', sans-serif;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 3% 20%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(30deg, rgba(2, 0, 36, 1) 0%, rgba(3, 2, 51, 1) 0%, rgba(5, 4, 69, 1) 0%, rgba(9, 49, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}

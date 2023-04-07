@@ -1,1 +1,13 @@
-<h1>Show a list of all related posts of user <%=params[:user_id]%><h1>
+<%= stylesheet_link_tag('posts_index') %>
+<section class="post_index_section">
+    <%= render "users/user_card", user: @user %>
+    <% @user.posts.each do |post| %>
+    <%= render "post_card", post: post %>
+    <% post.most_recent_comments.each do |comment| %>
+    <ul class="comments_list">
+        <%= render "comment_card", comment: comment %>
+    </ul>
+    <%end%>
+    <%end%>
+    <button class="pagination">Pagination</button>
+</section>

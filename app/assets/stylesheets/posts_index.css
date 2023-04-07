@@ -1,0 +1,18 @@
+.post_index_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments_list {
+  list-style: none;
+}
+
+.comments_list li {
+  display: flex;
+  align-items: center;
+}
+
+.pagination {
+  width: fit-content;
+  align-self: center;
+}
