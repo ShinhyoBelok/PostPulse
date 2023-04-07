@@ -16,3 +16,18 @@
   width: fit-content;
   align-self: center;
 }
+
+.posts_div {
+  overflow-y: scroll;
+  max-height: 75vh;
+}
+
+.posts_div::-webkit-scrollbar {
+  display: none;
+}
+
+.right_side {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
