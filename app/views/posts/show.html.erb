@@ -1,3 +1,6 @@
+<%= link_to user_posts_path(@user) do %> <%# Back to posts btn %>
+    <button class="back_to_posts">Posts</button>
+<% end %>
 <article class="post border">
     <h3 class="title"><%= @post.title %> by <%= @post.author.name %></h3>
     <p><%= @post.text %></p>
@@ -6,8 +9,4 @@
         <h5>Likes: <%= @post.likes_counter %></h5>
     </div>
 </article>
-<% @post.comments.each do |comment| %>
-<ul class="comments_list">
-    <%= render "comment_card", comment: comment %>
-</ul>
-<%end%>
+<%= render "post_card_comment", user: @user, post: @post %>
