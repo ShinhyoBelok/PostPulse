@@ -33,9 +33,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Project Name
+# 📖 PostPulse <a name="about-project"></a>
 
-## PostPulse
+**PostPulse** is a ruby on rails app that let you create and save posts, comments and like in a database, in a similar wat of an social media app.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -49,6 +49,12 @@
 
 - Show the list of posts. 
 - Empower readers to interact with them by adding comments and liking posts.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link]() Working on it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,26 +82,22 @@ Clone the repository using [this link](https://github.com/ShinhyoBelok/PostPulse
 
 ### Install
 
-In the terminal, go to your file directory and run this command.
+- Ruby
+- Ruby on Rails
+- Postgresql
 
-```
-$ git clone https://github.com/ShinhyoBelok/PostPulse.git
-```
 ### Get into development
 
 In the terminal, run these commands to get into development.
 ```
-$ cd catalogue-using-ruby
-
-$ bundle init
-
 $ bundle install (install dependencies)
-
-$ ruby main.rb (run the app locally)
 ```
 ### Usage
 
-This website is applicable for both mobile and desktop version.
+To run the project run the command:
+```
+  rails server
+```
 
 ### Deployment
 
@@ -116,9 +118,8 @@ This website is applicable for both mobile and desktop version.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Validations and Model specs.**
-- [ ] **Processing data in models.**
-- [ ] **Setup and controllers.**
+- [ ] **Faster respond.**
+- [ ] **Better design.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
