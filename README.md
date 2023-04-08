@@ -35,7 +35,7 @@
 
 # 📖 PostPulse <a name="about-project"></a>
 
-**PostPulse** is a ruby on rails app that let you create and save posts, comments and like in a database, in a similar wat of an social media app.
+**PostPulse** is a ruby on rails app that let you create and save posts, comments and like in a database, in a similar way of an social media app.
 
 ## 🛠 Built With <a name="built-with"></a>
 
