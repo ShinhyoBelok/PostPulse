@@ -1,13 +1,21 @@
 <%= stylesheet_link_tag('posts_index') %>
 <section class="post_index_section">
+    <%= link_to root_path, class: "right_side" do %> <%# Back to users btn %>
+        <button>Users</button>
+    <% end %>
     <%= render "users/user_card", user: @user %>
-    <% @user.posts.each do |post| %>
-    <%= render "post_card", post: post %>
-    <% post.most_recent_comments.each do |comment| %>
-    <ul class="comments_list">
-        <%= render "comment_card", comment: comment %>
-    </ul>
-    <%end%>
-    <%end%>
+    <%= link_to "/users/#{@user.id}/posts/new", class: "right_side" do %> <%# New post btn %>
+        <button class="new_post_btn">New Post</button>
+    <% end %>
+    <div class="posts_div">
+        <% @user.posts.each do |post| %>
+        <%= render "post_card", post: post %>
+        <ul class="comments_list">
+            <% post.most_recent_comments.each do |comment| %>
+                <%= render "comment_card", comment: comment %>
+            <%end %>
+        </ul>
+        <%end%>
+    </div>
     <button class="pagination">Pagination</button>
 </section>

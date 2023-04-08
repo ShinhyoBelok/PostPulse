@@ -1,0 +1,13 @@
+<div class="right_side">
+    <%= link_to new_user_post_comment_path(user, post) do %> <%# Add comment btn %>
+        <button class="new_post_btn">Add comment</button>
+    <% end %>
+    <%= form_with model: Like.new, url: user_post_likes_path(user, post) do |form| %> <%# Add like btn %>
+        <button class="new_post_btn">Like</button>
+    <% end %>
+</div>
+<% post.most_recent_comments.each do |comment| %>
+<ul class="comments_list">
+    <%= render "comment_card", comment: comment %>
+</ul>
+<%end%>
