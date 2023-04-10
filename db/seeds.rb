@@ -42,7 +42,7 @@
 # end
 
 first_user = User.create(name: 'Tom', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Mexico.', posts_counter: 0)
-second_user = User.create(name: 'Lilly', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Poland.', posts_counter: 0)
+second_user = User.create(name: 'Lilly', photo: 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png', bio: 'Teacher from Poland.', posts_counter: 0)
 
 first_post = Post.create(author: first_user, title: 'Hello1', text: 'This is my 1 post', comments_counter: 0, likes_counter: 0)
 Post.create(author: first_user, title: 'Hello2', text: 'This is my 2 post', comments_counter: 0, likes_counter: 0)
