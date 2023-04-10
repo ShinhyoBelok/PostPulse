@@ -11,17 +11,11 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
-  def update_comment_counter
-    self.comments_counter = comments.count
-    save
-  end
+  after_save :update_post_counter
 
-  def update_like_counter
-    self.likes_counter = likes.count
-    save
-  end
+  private
 
-  def increment_post_counter
+  def update_post_counter
     author.increment!(:posts_counter)
   end
 end
