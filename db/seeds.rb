@@ -40,7 +40,7 @@
 #         end
 #     end
 # end
-
+=begin
 first_user = User.create(name: 'Tom', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Mexico.', posts_counter: 0)
 second_user = User.create(name: 'Lilly', photo: 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png', bio: 'Teacher from Poland.', posts_counter: 0)
 
@@ -57,3 +57,4 @@ Comment.create(post: first_post, author: second_user, text: 'Hi Tom!3' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Tom!4' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Tom!5' )
 Comment.create(post: first_post, author: second_user, text: 'Hi Tom!6' )
+=end
