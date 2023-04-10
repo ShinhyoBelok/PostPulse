@@ -4,7 +4,6 @@ class LikesController < ApplicationController
     @like = Like.new(author: current_user, post: @post)
     return unless @like.save
 
-    @post.update_like_counter
     redirect_back(fallback_location: root_path)
   end
 end
