@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
 
     return unless @comment.save
 
-    @post.update_comment_counter
     redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
   end
 
