@@ -31,7 +31,9 @@ RSpec.describe Post, type: :model do
   end
 
   it 'title should be less than 250 chars' do
+    # rubocop:disable Metrics/LineLength
     subject.title = 'The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow. Jackdaws love my big sphinx of quartz. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump! The five boxing wizards jump quickly. Waltz, nymph, for quick jigs vex Bud.'
+    # rubocop:enable Metrics/LineLength
     expect(subject).to_not be_valid
     subject.title = 'Vacation'
     expect(subject).to be_valid
