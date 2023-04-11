@@ -8,11 +8,11 @@
         <button class="new_post_btn">New Post</button>
     <% end %>
     <div class="posts_div">
-        <% @user.posts.each do |post| %>
+        <% @posts.each do |post| %>
         <%= render "post_card", post: post %>
         <ul class="comments_list">
-            <% post.most_recent_comments.each do |comment| %>
-                <%= render "comment_card", comment: comment %>
+            <% post.comments.sort_by { |comment| comment.created_at }.reverse.take(5).each do |comment| %>
+               <%= render "comment_card", comment: comment %>
             <%end %>
         </ul>
         <%end%>

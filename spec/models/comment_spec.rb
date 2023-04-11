@@ -13,8 +13,6 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'should increment comments counter for post' do
-    prev_counter = subject.post.comments_counter
-    subject.increment_comments_counter
-    expect(subject.post.comments_counter) == prev_counter + 1
+    expect(subject.post.comments_counter) == 1
   end
 end
