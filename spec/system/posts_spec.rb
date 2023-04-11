@@ -2,47 +2,19 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :system do
   before :each do
     driven_by(:rack_test)
-    @user = User.create(
-      name: 'Tornado',
-      photo: 'https://unsplash.com/photos/Tornado',
-      bio: 'Complete bio Tornado',
-      posts_counter: 0
-    )
-    @post = Post.create(
-      title: 'post 1',
-      text: 'my last recent post',
-      comments_counter: 0,
-      likes_counter: 0,
-      author: @user
-    )
-    Post.create(
-      title: 'post 2',
-      text: 'new post 2',
-      comments_counter: 0,
-      likes_counter: 0,
-      author: @user
-    )
-    Post.create(
-      title: 'post 3',
-      text: 'new post 3',
-      comments_counter: 0,
-      likes_counter: 0,
-      author: @user
-    )
-    Post.create(
-      title: 'post 4',
-      text: 'new post 4',
-      comments_counter: 0,
-      likes_counter: 0,
-      author: @user
-    )
-    Post.create(
-      title: 'post 5',
-      text: 'new post 5',
-      comments_counter: 0,
-      likes_counter: 0,
-      author: @user
-    )
+    @user = User.create(name: 'Tornado', photo: 'https://unsplash.com/photos/Tornado',
+                        bio: 'Complete bio Tornado', posts_counter: 0)
+    @post = Post.create(title: 'post 1', text: 'my last recent post',
+                        comments_counter: 0, likes_counter: 0, author: @user)
+    Post.create(title: 'post 2', text: 'new post 2',
+                comments_counter: 0, likes_counter: 0, author: @user)
+    Post.create(title: 'post 3', text: 'new post 3',
+                comments_counter: 0, likes_counter: 0, author: @user)
+    Post.create(title: 'post 4', text: 'new post 4',
+                comments_counter: 0, likes_counter: 0, author: @user)
+    Post.create(title: 'post 5', text: 'new post 5',
+                comments_counter: 0, likes_counter: 0, author: @user)
+
     Comment.create(author: @user, post: @post, text: 'comment 1')
     Comment.create(author: @user, post: @post, text: 'comment 2')
     Comment.create(author: @user, post: @post, text: 'comment 3')
@@ -127,11 +99,11 @@ RSpec.describe 'Posts', type: :system do
     end
 
     scenario 'User can see how many comments it has' do
-      expect(page).to have_content("Comments: 6")
+      expect(page).to have_content('Comments: 6')
     end
 
     scenario 'User can see how many likes it has' do
-      expect(page).to have_content("Likes: 0")
+      expect(page).to have_content('Likes: 0')
     end
 
     scenario 'User can see the post body' do
