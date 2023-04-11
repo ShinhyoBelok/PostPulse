@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :request do
     )
     @post = Post.create(
       author: @first_user,
-      title: 'Hello2', 
+      title: 'Hello2',
       text: 'This is my 2 post',
       comments_counter: 0,
       likes_counter: 0
@@ -50,7 +50,7 @@ RSpec.describe UsersController, type: :request do
     end
 
     it 'displays the correct content' do
-      expect(response.body).to include("#{@first_user.name}")
+      expect(response.body).to include(@first_user.name.to_s)
     end
   end
 end
