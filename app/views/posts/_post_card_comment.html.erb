@@ -6,7 +6,7 @@
         <button class="new_post_btn">Like</button>
     <% end %>
 </div>
-<% post.most_recent_comments.each do |comment| %>
+<% post.comments.each do |comment| %>
 <ul class="comments_list">
     <%= render "comment_card", comment: comment %>
 </ul>

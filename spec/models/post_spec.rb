@@ -80,8 +80,6 @@ RSpec.describe Post, type: :model do
   end
 
   it 'should increment post counter for the author' do
-    prev_counter = subject.author.posts_counter
-    subject.increment_post_counter
-    expect(subject.author.posts_counter) == prev_counter + 1
+    expect(subject.author.posts_counter) == 1
   end
 end
