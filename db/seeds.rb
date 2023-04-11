@@ -41,19 +41,19 @@
 #     end
 # end
 
-first_user = User.create(name: 'Tom', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Mexico.', posts_counter: 0)
-second_user = User.create(name: 'Lilly', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Poland.', posts_counter: 0)
+# first_user = User.create(name: 'Tom', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Mexico.', posts_counter: 0)
+# second_user = User.create(name: 'Lilly', photo: 'https://cdn3.iconfinder.com/data/icons/avatars-flat/33/man_5-512.png', bio: 'Teacher from Poland.', posts_counter: 0)
 
-first_post = Post.create(author: first_user, title: 'Hello1', text: 'This is my 1 post', comments_counter: 0, likes_counter: 0)
-Post.create(author: first_user, title: 'Hello2', text: 'This is my 2 post', comments_counter: 0, likes_counter: 0)
-Post.create(author: first_user, title: 'Hello3', text: 'This is my 3 post', comments_counter: 0, likes_counter: 0)
-Post.create(author: first_user, title: 'Hello4', text: 'This is my 4 post', comments_counter: 0, likes_counter: 0)
-Post.create(author: second_user, title: 'Hello5', text: 'This is my 5 post', comments_counter: 0, likes_counter: 0)
-Post.create(author: second_user, title: 'Hello6', text: 'This is my 6 post', comments_counter: 0, likes_counter: 0)
+# first_post = Post.create(author: first_user, title: 'Hello1', text: 'This is my 1 post', comments_counter: 0, likes_counter: 0)
+# Post.create(author: first_user, title: 'Hello2', text: 'This is my 2 post', comments_counter: 0, likes_counter: 0)
+# Post.create(author: first_user, title: 'Hello3', text: 'This is my 3 post', comments_counter: 0, likes_counter: 0)
+# Post.create(author: first_user, title: 'Hello4', text: 'This is my 4 post', comments_counter: 0, likes_counter: 0)
+# Post.create(author: second_user, title: 'Hello5', text: 'This is my 5 post', comments_counter: 0, likes_counter: 0)
+# Post.create(author: second_user, title: 'Hello6', text: 'This is my 6 post', comments_counter: 0, likes_counter: 0)
 
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!1' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!2' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!3' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!4' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!5' )
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!6' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!1' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!2' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!3' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!4' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!5' )
+# Comment.create(post: first_post, author: second_user, text: 'Hi Tom!6' )
