@@ -25,12 +25,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     authorize! :destroy, @post
     @user.posts_counter -= 1
     @post.destroy
-    redirect_to user_posts_path(current_user)
+    @user.save
+    redirect_to user_posts_path(@user)
   end
 
   private
