@@ -5,12 +5,19 @@
     <%= form_with model: Like.new, url: user_post_likes_path(user, post) do |form| %> <%# Add like btn %>
         <button class="new_post_btn">Like</button>
     <% end %>
-    <% if can? :destroy, @post %>
+    <% if can? :destroy, @post %> <%# Add delete btn %>
         <%= button_to "Delete", user_post_path(@user, @post), method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
 </div>
-<% post.comments.each do |comment| %>
+
 <ul class="comments_list">
-    <%= render "comment_card", comment: comment %>
+    <% post.comments.each do |comment| %>
+    <li>
+        <%= render "comment_card", comment: comment %>
+        <% if can? :destroy, comment %>
+            <%= button_to "Delete", user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+    </li>
+    <%end%>
 </ul>
-<%end%>
+
