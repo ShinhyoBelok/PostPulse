@@ -61,13 +61,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_161935) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "role"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "posts", column: "posts_id"
+  add_foreign_key "comments", "posts", column: "posts_id", on_delete: :cascade
   add_foreign_key "comments", "users", column: "author_id"
-  add_foreign_key "likes", "posts", column: "posts_id"
+  add_foreign_key "likes", "posts", column: "posts_id", on_delete: :cascade
   add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
 end
