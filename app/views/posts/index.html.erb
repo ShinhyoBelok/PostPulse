@@ -12,7 +12,9 @@
         <%= render "post_card", post: post %>
         <ul class="comments_list">
             <% post.comments.sort_by { |comment| comment.created_at }.reverse.take(5).each do |comment| %>
-               <%= render "comment_card", comment: comment %>
+                <li>
+                    <%= render "comment_card", comment: comment %>
+                </li>
             <%end %>
         </ul>
         <%end%>
