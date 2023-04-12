@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag('user_card') %>
 <section>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete %> <%# Logout %>
     <% @users.each do |user| %>
     <%= link_to "/users/#{user.id}", html_options: { as: "script" } do %>
     <%= render "user_card", user: user %>
