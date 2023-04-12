@@ -28,6 +28,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.find(params[:id])
     authorize! :destroy, @post
+    @user.posts_counter -= 1
     @post.destroy
     redirect_to user_posts_path(current_user)
   end
