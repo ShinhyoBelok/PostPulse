@@ -1,4 +1,7 @@
 <li>
     <h3><%= comment.author.name %>: &nbsp; </h3>
     <p><%= comment.text %></p>
+    <% if can? :destroy, comment %>
+        <%= button_to "Delete", user_post__comment_path(@user, @post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
 </li>
