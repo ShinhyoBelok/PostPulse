@@ -6,14 +6,16 @@ class Api::CommentsController < ApplicationController
   end
 
   def api_create_comment
-    post = Post.find(params[:post_id])
-    comment = current_user.comments.new(comment_params)
-    comment.author = current_user
-    comment.post = post
-    if comment.save
-      render json: comment
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new(comment_params)
+    @comment.author = @user
+    @comment.post = @user.posts.find(params['post_id'])
+
+    if @comment.save
+      render json: { status: :created, data: @comment }
     else
-      render json: { error: 'Failed to create comment' }, status: :unprocessable_entity
+      render json: { error: @comment.errors, status: :unprocessable_entity }
     end
   end
 
