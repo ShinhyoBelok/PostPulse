@@ -1,4 +1,4 @@
-class Api::CommentsController < ApplicationController
+class Api::CommentsController < Api::ApplicationController
   def api_index
     post = Post.find(params[:post_id])
     comments = Comment.all.where(post:)
@@ -9,7 +9,7 @@ class Api::CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comment.author = @user
+    @comment.author = User.find(params[:author_id])
     @comment.post = @user.posts.find(params['post_id'])
 
     if @comment.save
