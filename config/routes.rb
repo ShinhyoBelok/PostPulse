@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       resources :comments, :likes
     end
   end
+  # api ---
+  get "/api/users/:user_id/posts", to: "posts#api_index"
+  get "/api/users/:user_id/posts/:post_id/comments", to: "comments#api_index"
+  post "/api/users/:user_id/posts/:post_id/comments", to: 'comments#api_create_comment'
+  # api ---
   get "/users/:id", to: "users#show"
   get "/users/:user_id/posts", to: "posts#index"
   get "/users/:user_id/posts/new", to: "posts#new"
