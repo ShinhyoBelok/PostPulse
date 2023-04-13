@@ -74,6 +74,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -104,6 +105,9 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    io-console (0.6.0)
+    irb (1.6.4)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -134,9 +138,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x64-mingw-ucrt)
       racc (~> 1.4)
-    orm_adapter (0.5.0)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.2.1.1)
       ast (~> 2.4.1)
@@ -268,6 +272,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   capybara
   debug
   devise
@@ -288,7 +293,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.3.26

@@ -15,6 +15,17 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    authorize! :destroy, @comment
+    @post.comments_counter -= 1
+    @comment.destroy
+    @post.save
+    redirect_to user_post_path(@user, @post)
+  end
+
   private
 
   def comment_params

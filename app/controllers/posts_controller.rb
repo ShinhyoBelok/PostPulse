@@ -24,6 +24,16 @@ class PostsController < ApplicationController
     redirect_to "/users/#{current_user.id}/posts"
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    @user.posts_counter -= 1
+    @post.destroy
+    @user.save
+    redirect_to user_posts_path(@user)
+  end
+
   private
 
   def post_params
