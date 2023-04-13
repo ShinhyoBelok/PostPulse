@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     end
   end
   # api ---
-  get "/api/users/:user_id/posts", to: "posts#api_index"
-  get "/api/users/:user_id/posts/:post_id/comments", to: "comments#api_index"
-  post "/api/users/:user_id/posts/:post_id/comments", to: 'comments#api_create_comment'
+  get "/api/users/:user_id/posts", to: "api/posts#api_index"
+  get "/api/users/:user_id/posts/:post_id/comments", to: "api/comments#api_index"
+  post "/api/users/:user_id/posts/:post_id/comments", to: "api/comments#api_create_comment"
   # api ---
   get "/users/:id", to: "users#show"
   get "/users/:user_id/posts", to: "posts#index"
