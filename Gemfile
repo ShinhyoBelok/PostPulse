@@ -10,7 +10,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # cancancan
 gem 'cancancan'
 
-#JWT
+# JWT
 gem 'jwt'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
