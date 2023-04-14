@@ -22,7 +22,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -99,19 +99,25 @@ To run the project run the command:
   rails server
 ```
 
-### Deployment
+<!-- ### Deployment
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Shinhyo Belliard**
 
 - GitHub: [@ShinhyoBelok](https://github.com/ShinhyoBelok)
 - Twitter: [@Bell_iraki](https://twitter.com/Bell_iraki)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/shinhyo-belliard-okazaki-807a38249/)
+
+👤 **Sandro Hernandez**
+
+- GitHub: [@sambeck87](https://github.com/sambeck87)
+- Twitter: [@sambeck4488](https://twitter.com/sambeck4488)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sandro-israel-hern%C3%A1ndez-zamora-899386a4/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
