@@ -29,24 +29,26 @@ describe 'Comments API' do
       parameter name: :comment, in: :body, schema: {
         type: :object,
         properties: {
-          text: { type: :string },
+          text: { type: :string }
         },
         required: %w[text user_id post_id author_id]
       }
 
       response '201', 'comment created' do
         let(:user) { create(:user) }
-        let(:post) { create(:post, user: user) }
-        let(:comment) { build(:comment, user: user, post: post) }
-        let(:comment) { { text: comment.text, user_id: comment.user.id, post_id: comment.post.id, author_id: comment.author.id } }
+        let(:post) { create(:post, user:) }
+        let(:comment) { build(:comment, user:, post:) }
+        let(:comment) do
+          { text: comment.text, user_id: comment.user.id, post_id: comment.post.id, author_id: comment.author.id }
+        end
 
         run_test!
       end
 
       response '422', 'invalid request' do
         let(:user) { create(:user) }
-        let(:post) { create(:post, user: user) }
-        let(:comment) { build(:comment, user: user, post: post) }
+        let(:post) { create(:post, user:) }
+        let(:comment) { build(:comment, user:, post:) }
         let(:comment) { { text: '', user_id: comment.user.id, post_id: comment.post.id, author_id: comment.author.id } }
 
         run_test!
