@@ -1,0 +1,83 @@
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+  description: This a blog-app api that let you request the posts and comments of a given user and let you create a comment with a post request of a given post.
+
+paths:
+  /api/users/{user_id}/posts:
+    get:
+      summary: Retrieves all posts for a user
+      tags:
+        - Get Posts
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: posts found
+        '404':
+          description: User not found or post not found
+
+  /api/users/{user_id}/posts/{post_id}/comments:
+    get:
+      summary: Retrieves all comments for a post
+      tags:
+        - Get Comments
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+        - name: post_id
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: comments found
+        '404':
+          description: comments not found or post not found
+
+  /api/users/{user_id}/posts/{post_id}/comments/{author_id}:
+    post:
+      summary: Creates a comment for a post
+      tags:
+        - Create Comment
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+        - name: post_id
+          in: path
+          schema:
+            type: integer
+        - name: author_id
+          in: path
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '201':
+          description: comment created
+        '422':
+          description: invalid request
+
+servers:
+  - url: http://127.0.0.1:3000
+    variables:
+      defaultHost:
+        default: '127.0.0.1:3000'
