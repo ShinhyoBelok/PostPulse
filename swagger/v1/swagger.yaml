@@ -1,0 +1,83 @@
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+  description: this api version is deprecated and will be removed
+
+paths:
+  /api/users/{user_id}/posts:
+    get:
+      summary: Retrieves all posts for a user
+      tags:
+        - Posts
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: posts found
+        '404':
+          description: user not found
+
+  /api/users/{user_id}/posts/{post_id}/comments:
+    get:
+      summary: Retrieves all comments for a post
+      tags:
+        - Get Comments
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+        - name: post_id
+          in: path
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: comments found
+        '404':
+          description: post not found
+
+  /api/users/{user_id}/posts/{post_id}/comments/{author_id}:
+    post:
+      summary: Creates a comment for a post
+      tags:
+        - Create Comment
+      parameters:
+        - name: user_id
+          in: path
+          schema:
+            type: integer
+        - name: post_id
+          in: path
+          schema:
+            type: integer
+        - name: author_id
+          in: path
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '201':
+          description: comment created
+        '422':
+          description: invalid request
+
+servers:
+  - url: http://127.0.0.1:3000
+    variables:
+      defaultHost:
+        default: '127.0.0.1:3000'
